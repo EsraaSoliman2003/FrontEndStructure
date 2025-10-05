@@ -1,16 +1,134 @@
-# React + Vite
+# 🚀 React + Vite + Tailwind Starter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and fast **React + Vite** project setup powered by **Tailwind CSS**, featuring a clean architecture with reusable components, state management, and routing ready out of the box.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📁 Project Structure
 
-## React Compiler
+```
+src/
+ ┣ 📂 api          → Contains API call logic and configurations
+ ┣ 📂 components   → Reusable UI components (Navbar, Sidebar, Buttons, etc.)
+ ┣ 📂 hooks        → Custom React hooks for reusable logic
+ ┣ 📂 pages        → Main pages of the application
+ ┣ 📂 layout       → Contains layout components like Header, Sidebar, and Footer
+ ┣ 📂 store        → State management (if using Redux or Context API)
+ ┣ 📂 utils        → Helper functions (e.g., formatDate, calculateTotal)
+ ┣ 📂 assets       → Images, icons, fonts, and static files
+ ┗ 📜 main.jsx     → Application entry point
+```
+context
+data
+features
+locales
+router
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ⚙️ Installation & Setup
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/EsraaSoliman2003/FrontEndStructure.git
+   ```
+
+2. **Navigate to the project directory**
+
+   ```bash
+   cd project-name
+   ```
+
+3. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+4. **Run the development server**
+
+   ```bash
+   npm run dev
+   ```
+
+5. **Build for production**
+
+   ```bash
+   npm run build
+   ```
+
+6. **Preview production build**
+
+   ```bash
+   npm run preview
+   ```
+
+---
+
+## 🎨 Tech Stack
+
+* ⚛️ **React 19** — Frontend library
+* ⚡ **Vite** — Fast build tool
+* 💅 **Tailwind CSS** — Utility-first CSS framework
+* 🧩 **React Router DOM** — Routing and navigation
+* 🧠 **Context API / Redux** — Global state management (optional)
+
+---
+
+## 🧱 Features
+
+* 🔹 Clean and scalable folder structure
+* 🔹 Ready-to-use Navbar and Sidebar components
+* 🔹 Fast HMR (Hot Module Replacement)
+* 🔹 Fully responsive design with Tailwind
+* 🔹 Easy customization
+
+---
+
+## 🧭 Available Scripts
+
+| Command           | Description              |
+| ----------------- | ------------------------ |
+| `npm run dev`     | Run development server   |
+| `npm run build`   | Build production files   |
+| `npm run preview` | Preview production build |
+
+---
+
+## 📦 Environment Variables
+
+Create a `.env` file in the root folder:
+
+```
+VITE_API_URL=https://api.example.com
+```
+
+Access inside the app:
+
+```js
+const apiUrl = import.meta.env.VITE_API_URL;
+```
+
+---
+
+## 📘 Recommended Extensions (VS Code)
+
+* **ES7+ React/Redux/React-Native snippets**
+* **Tailwind CSS IntelliSense**
+* **Prettier** — Code formatter
+
+---
+
+## 👨‍💻 Author
+
+**Esraa Soliman**
+Full Stack Developer — Passionate about building modern web applications.
+[LinkedIn](https://www.linkedin.com/in/esraa-soliman-7b132a249) | [GitHub](https://github.com/EsraaSoliman2003)
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License** — free to use and modify.
