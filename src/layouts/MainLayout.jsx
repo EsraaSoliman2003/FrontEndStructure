@@ -1,5 +1,5 @@
 // use Navbar
-import Navbar from "./Navbar";
+import Navbar from "./Navbar/Navbar";
 import { useTranslation } from "react-i18next";
 
 export default function MainLayout({ children }) {

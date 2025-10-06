@@ -7,10 +7,11 @@
   "logout": "تسجيل الخروج",
 
   "welcomeMessage": "مرحبًا بك في تطبيقي",
-  "homeDescription": "هذه هي الصفحة الرئيسية لمشروعك.",
+  "homeDescription": "هذه هي الصفحة الرئيسية لمشروعك",
 
   "aboutTitle": "من نحن",
-  "aboutDescription": "هذه صفحة من نحن، يمكنك معرفة المزيد عنا هنا.",
+  "aboutDescription": "هذه صفحة من نحن، يمكنك معرفة المزيد عنا هنا",
 
-  "notFoundMessage": "404 | الصفحة غير موجودة"
+  "notFoundMessage": "404 | الصفحة غير موجودة",
+  "pageNotExist": "الصفحة غير موجودة"
 }

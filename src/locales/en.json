@@ -7,10 +7,11 @@
   "logout": "Logout",
 
   "welcomeMessage": "Welcome to My App",
-  "homeDescription": "This is the home page of your project.",
+  "homeDescription": "This is the home page of your project",
 
   "aboutTitle": "About Us",
-  "aboutDescription": "This is the About page. Learn more about what we do.",
+  "aboutDescription": "This is the About page. Learn more about what we do",
 
-  "notFoundMessage": "404 | Page Not Found"
+  "notFoundMessage": "404 | Page Not Found",
+  "pageNotExist": "Page Not Exist"
 }
