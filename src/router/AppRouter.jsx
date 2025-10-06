@@ -11,16 +11,17 @@ export default function AppRouter() {
       {/* Global Pages */}
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/about" element={<About />} />
 
       {/* Protected Pages */}
-      <Route
+      {/* <Route
         path="/about"
         element={
           <PrivateRoute>
             <About />
           </PrivateRoute>
         }
-      />
+      /> */}
 
       {/* Error Page */}
       <Route path="*" element={<NotFound />} />

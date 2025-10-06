@@ -1,14 +1,16 @@
 import { useTranslation } from "react-i18next";
 
-export default function About() {
+export default function Home() {
   const { t } = useTranslation();
 
   return (
-    <div className="p-10 text-center">
-      <h1 className="text-2xl font-bold text-blue-600 mb-3">
+    <div className="text-center">
+      <h1 className="text-3xl font-bold text-primary dark:text-primaryHover">
         {t("aboutTitle")}
       </h1>
-      <p className="text-gray-700">{t("aboutDescription")}</p>
+      <p className="mt-3 text-grayText dark:text-grayTextDark">
+        {t("aboutDescription")}
+      </p>
     </div>
   );
 }
