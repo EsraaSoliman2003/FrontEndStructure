@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { LifeBuoy, FileText, Globe, Sun, Moon } from "lucide-react";
+import "./MobileMenu.css";
 
 export default function MobileMenu({
   isOpen,
@@ -39,7 +40,7 @@ export default function MobileMenu({
               onClick={() => setIsOpen(false)}
               className="relative bg-gradient-to-r from-primary to-primaryHover text-white px-6 py-3 rounded-lg transition-all duration-navbar shadow-md hover:shadow-lg text-base font-semibold overflow-hidden group"
             >
-              <span className="relative z-10">{t("login") || "Login"}</span>
+              <span className="relative z-10">{t("login")}</span>
               {/* Gradient overlay on hover */}
               <span className="absolute inset-0 bg-gradient-to-r from-primaryHover to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-navbar"></span>
             </Link>
@@ -56,7 +57,7 @@ export default function MobileMenu({
                   size={20}
                   className=" transition-transform duration-navbar"
                 />
-                <span>{t("support") || "Support"}</span>
+                <span>{t("support")}</span>
               </button>
 
               <button
@@ -70,7 +71,7 @@ export default function MobileMenu({
                   size={20}
                   className=" transition-transform duration-navbar"
                 />
-                <span>{t("license") || "License"}</span>
+                <span>{t("license")}</span>
               </button>
 
               <button
@@ -105,27 +106,15 @@ export default function MobileMenu({
                     className=" transition-transform duration-navbar"
                   />
                 )}
-                <span>{theme === "light" ? "Dark Mode" : "Light Mode"}</span>
+                <span>
+                  {theme === "light" ? t("DarkMode") : t("LightMode")}
+                </span>
               </button>
             </div>
           </nav>
         </div>
       )}
-      <style jsx>{`
-        @keyframes slide-down {
-          from {
-            transform: translateY(-100%);
-            opacity: 0;
-          }
-          to {
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
-        .animate-slide-down {
-          animation: slide-down 0.3s ease-out forwards;
-        }
-      `}</style>
+
     </>
   );
 }

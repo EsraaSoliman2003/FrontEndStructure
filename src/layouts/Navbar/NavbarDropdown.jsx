@@ -10,9 +10,14 @@ export default function NavbarDropdown({
   handleThemeToggle,
   theme,
   i18n,
+  t,
 }) {
   return (
-    <div className="relative inline-block text-left" ref={dropdownRef}>
+    <div
+      dir={i18n.language === "ar" ? "rtl" : "ltr"}
+      className="relative inline-block text-left"
+      ref={dropdownRef}
+    >
       <button
         onClick={() => setDropdownOpen((prev) => !prev)}
         className="p-3 bg-transparent rounded-full transition-all duration-300 focus:outline-none"
@@ -22,14 +27,14 @@ export default function NavbarDropdown({
 
       {dropdownOpen && (
         <div className="overflow-hidden absolute right-0 mt-2 w-52 origin-top-right rounded-xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-xl transition-all duration-200 ease-out animate-fadeIn">
-          <div className="">
+          <div>
             {/* Support */}
             <button
               onClick={handleSupport}
               className="bg-transparent border-none rounded-none flex items-center gap-3 w-full px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary dark:hover:text-white transition-all"
             >
               <LifeBuoy size={18} />
-              <span>Support</span>
+              <span>{t("support")}</span>
             </button>
 
             {/* License */}
@@ -38,7 +43,7 @@ export default function NavbarDropdown({
               className="bg-transparent border-none rounded-none flex items-center gap-3 w-full px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary dark:hover:text-white transition-all"
             >
               <FileText size={18} />
-              <span>License</span>
+              <span>{t("license")}</span>
             </button>
 
             {/* Language */}
@@ -56,7 +61,7 @@ export default function NavbarDropdown({
               className="bg-transparent border-none rounded-none flex items-center gap-3 w-full px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary dark:hover:text-white transition-all"
             >
               {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
-              <span>{theme === "light" ? "Dark Mode" : "Light Mode"}</span>
+              <span>{theme === "light" ? t("DarkMode") : t("LightMode")}</span>
             </button>
           </div>
         </div>

@@ -13,5 +13,13 @@
   "aboutDescription": "This is the About page. Learn more about what we do",
 
   "notFoundMessage": "404 | Page Not Found",
-  "pageNotExist": "Page Not Exist"
+  "pageNotExist": "Page Not Exist",
+
+  "login": "Login",
+  "support": "Support",
+  "license": "License",
+  "DarkMode": "Dark Mode",
+  "LightMode": "Light Mode",
+  "email": "Email",
+  "password": "Password"
 }

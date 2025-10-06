@@ -84,6 +84,7 @@ export default function Navbar() {
             handleThemeToggle={handleThemeToggle}
             theme={theme}
             i18n={i18n}
+            t={t}
           />
         </nav>
 

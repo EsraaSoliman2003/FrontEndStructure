@@ -20,7 +20,7 @@ export default function MainLayout({ children }) {
 }
 
 // use Sidebar
-// import Sidebar from "./Sidebar";
+// import Sidebar from "./Sidebar/Sidebar";
 // import { useTranslation } from "react-i18next";
 
 // export default function MainLayout({ children }) {
