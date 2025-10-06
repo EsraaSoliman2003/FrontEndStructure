@@ -5,11 +5,15 @@ import { useThemeStore } from "../../store/themeStore";
 import SidebarLinks from "./SidebarLinks";
 import SidebarControls from "./SidebarControls";
 import { Home, Info, Settings, LogIn } from "lucide-react";
+import { useAuthStore } from "../../features/Auth/store";
 
 export default function Sidebar() {
   const { theme, toggleTheme } = useThemeStore();
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
+
+  const user = useAuthStore((state) => state.user);
+  const logout = useAuthStore((state) => state.logout);
 
   const toggleLanguage = () => {
     const newLang = i18n.language === "en" ? "ar" : "en";
@@ -19,12 +23,17 @@ export default function Sidebar() {
 
   const toggleSidebar = () => setIsOpen(!isOpen);
 
-  const links = [
-    { name: t("home"), path: "/", icon: <Home size={20} /> },
-    { name: t("about"), path: "/about", icon: <Info size={20} /> },
-    { name: t("settings"), path: "/settings", icon: <Settings size={20} /> },
-    { name: t("login"), path: "/login", icon: <LogIn size={20} /> },
-  ];
+  const links = user
+    ? [
+        { name: t("home"), path: "/", icon: <Home size={20} /> },
+        { name: t("about"), path: "/about", icon: <Info size={20} /> },
+        { name: t("profile"), path: "/profile", icon: <Settings size={20} /> },
+      ]
+    : [
+        { name: t("home"), path: "/", icon: <Home size={20} /> },
+        { name: t("about"), path: "/about", icon: <Info size={20} /> },
+        { name: t("login"), path: "/login", icon: <LogIn size={20} /> },
+      ];
 
   return (
     <>
@@ -74,6 +83,16 @@ export default function Sidebar() {
           language={i18n.language}
           toggleLanguage={toggleLanguage}
         />
+        {user && (
+          <button
+            onClick={() => logout()}
+            className="m-5 w-[calc(100%-2rem)] flex items-center justify-center gap-2 px-4 py-2
+               bg-red-500 text-white rounded-lg hover:bg-red-600 transition-all duration-300"
+          >
+            <LogIn size={18} className="rotate-180" />
+            {t("logout") || "Logout"}
+          </button>
+        )}
 
         <div
           className="
