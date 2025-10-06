@@ -10,20 +10,17 @@ A modern and fast **React + Vite** project setup powered by **Tailwind CSS**, fe
 src/
  ┣ 📂 api          → Contains API call logic and configurations
  ┣ 📂 components   → Reusable UI components (Navbar, Sidebar, Buttons, etc.)
+ ┣ 📂 features     → Components or modules for specific app features
  ┣ 📂 hooks        → Custom React hooks for reusable logic
  ┣ 📂 pages        → Main pages of the application
  ┣ 📂 layout       → Contains layout components like Header, Sidebar, and Footer
  ┣ 📂 store        → State management (if using Redux or Context API)
+ ┣ 📂 locales      → Translations and language state
+ ┣ 📂 router       → App routes and route-related state
  ┣ 📂 utils        → Helper functions (e.g., formatDate, calculateTotal)
  ┣ 📂 assets       → Images, icons, fonts, and static files
  ┗ 📜 main.jsx     → Application entry point
 ```
-context
-data
-features
-locales
-router
-
 
 ---
 
@@ -69,21 +66,21 @@ router
 
 ## 🎨 Tech Stack
 
-* ⚛️ **React 19** — Frontend library
-* ⚡ **Vite** — Fast build tool
-* 💅 **Tailwind CSS** — Utility-first CSS framework
-* 🧩 **React Router DOM** — Routing and navigation
-* 🧠 **Context API / Redux** — Global state management (optional)
+- ⚛️ **React 19** — Frontend library
+- ⚡ **Vite** — Fast build tool
+- 💅 **Tailwind CSS** — Utility-first CSS framework
+- 🧩 **React Router DOM** — Routing and navigation
+- 🧠 **Context API / Redux** — Global state management (optional)
 
 ---
 
 ## 🧱 Features
 
-* 🔹 Clean and scalable folder structure
-* 🔹 Ready-to-use Navbar and Sidebar components
-* 🔹 Fast HMR (Hot Module Replacement)
-* 🔹 Fully responsive design with Tailwind
-* 🔹 Easy customization
+- 🔹 Clean and scalable folder structure
+- 🔹 Ready-to-use Navbar and Sidebar components
+- 🔹 Fast HMR (Hot Module Replacement)
+- 🔹 Fully responsive design with Tailwind
+- 🔹 Easy customization
 
 ---
 
@@ -115,9 +112,9 @@ const apiUrl = import.meta.env.VITE_API_URL;
 
 ## 📘 Recommended Extensions (VS Code)
 
-* **ES7+ React/Redux/React-Native snippets**
-* **Tailwind CSS IntelliSense**
-* **Prettier** — Code formatter
+- **ES7+ React/Redux/React-Native snippets**
+- **Tailwind CSS IntelliSense**
+- **Prettier** — Code formatter
 
 ---
 
