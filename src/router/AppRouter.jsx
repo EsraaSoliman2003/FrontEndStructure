@@ -4,6 +4,7 @@ import About from "../pages/About";
 import Login from "../features/Auth/Login";
 import PrivateRoute from "./PrivateRoute";
 import NotFound from "../pages/NotFound";
+import Profile from "../pages/Profile";
 
 export default function AppRouter() {
   return (
@@ -14,14 +15,14 @@ export default function AppRouter() {
       <Route path="/about" element={<About />} />
 
       {/* Protected Pages */}
-      {/* <Route
-        path="/about"
+      <Route
+        path="/profile"
         element={
           <PrivateRoute>
-            <About />
+            <Profile />
           </PrivateRoute>
         }
-      /> */}
+      />
 
       {/* Error Page */}
       <Route path="*" element={<NotFound />} />

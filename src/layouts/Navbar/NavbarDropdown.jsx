@@ -1,4 +1,13 @@
-import { Settings, LifeBuoy, FileText, Globe, Sun, Moon } from "lucide-react";
+import { useAuthStore } from "../../features/Auth/store";
+import {
+  Settings,
+  LifeBuoy,
+  FileText,
+  Globe,
+  Sun,
+  Moon,
+  LogOut,
+} from "lucide-react";
 
 export default function NavbarDropdown({
   dropdownOpen,
@@ -12,6 +21,9 @@ export default function NavbarDropdown({
   i18n,
   t,
 }) {
+  const logout = useAuthStore((state) => state.logout);
+  const user = useAuthStore((state) => state.user);
+
   return (
     <div
       dir={i18n.language === "ar" ? "rtl" : "ltr"}
@@ -63,6 +75,27 @@ export default function NavbarDropdown({
               {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
               <span>{theme === "light" ? t("DarkMode") : t("LightMode")}</span>
             </button>
+
+            {/* Logout */}
+            {user && (
+              <button
+                onClick={() => {
+                  logout();
+                  setDropdownOpen(false);
+                }}
+                className="
+                  flex items-center gap-3 w-full px-4 py-2 text-sm 
+                  text-red-600 dark:text-red-400 
+                  bg-transparent border-none rounded-none
+                  hover:bg-red-100 dark:hover:bg-red-700 
+                  hover:text-red-800 dark:hover:text-red-200
+                  transition-all duration-200
+                "
+              >
+                <LogOut size={18} />
+                <span>{t("logout") || "Logout"}</span>
+              </button>
+            )}
           </div>
         </div>
       )}

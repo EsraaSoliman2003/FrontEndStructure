@@ -21,5 +21,8 @@
   "DarkMode": "Dark Mode",
   "LightMode": "Light Mode",
   "email": "Email",
-  "password": "Password"
+  "password": "Password",
+
+  "profileTitle": "Bla Bla Bla",
+  "profileDescription": "Test Test Test"
 }
