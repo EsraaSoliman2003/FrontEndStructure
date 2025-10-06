@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu } from "lucide-react";
+import { Menu, Sun, Moon } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useThemeStore } from "../store/themeStore";
 
 export default function Navbar() {
-  const { toggleTheme } = useThemeStore();
-
+  const { theme, toggleTheme } = useThemeStore();
   const [isOpen, setIsOpen] = useState(false);
   const { t, i18n } = useTranslation();
 
@@ -17,91 +16,121 @@ export default function Navbar() {
   };
 
   return (
-    <header className="shadow-sm w-full sticky top-0 z-50">
-      <div className="flex items-center justify-between px-6 py-3">
+    <header
+      className={`w-full sticky top-0 z-50 bg-lightBg dark:bg-darkBg text-lightText dark:text-darkText backdrop-blur-sm shadow-glass dark:shadow-glassDark transition-all duration-navbar ${
+        i18n.language === "ar" ? "font-arabic" : "font-sans"
+      }`}
+    >
+      <div className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
         {/* Logo */}
-        <Link to="/" className="text-xl font-bold text-blue-600">
+        <Link
+          to="/"
+          className="text-2xl font-bold text-primary hover:text-primaryHover transition-colors duration-navbar relative group"
+        >
           MyApp
+          <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-primaryHover transition-all duration-navbar group-hover:w-full"></span>
         </Link>
 
-        <button
-          onClick={toggleTheme}
-          className="px-4 py-2 bg-blue-500 text-white rounded"
-        >
-          Toggle Theme
-        </button>
-
         {/* Desktop Menu */}
-        <nav className="hidden md:flex gap-6 items-center">
-          <Link to="/" className="text-gray-700 hover:text-blue-600">
-            {t("home")}
-          </Link>
-          <Link to="/about" className="text-gray-700 hover:text-blue-600">
-            {t("about")}
-          </Link>
-          <Link to="/contact" className="text-gray-700 hover:text-blue-600">
-            {t("contact")}
-          </Link>
-
-          {/* Toggle Between Languages */}
-          <button
-            onClick={toggleLanguage}
-            className="ml-4 bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition"
+        <nav className="hidden md:flex gap-10 items-center">
+          <Link
+            to="/"
+            className="text-base font-medium hover:text-primaryHover transition-colors duration-navbar relative group"
           >
-            {i18n.language === "en" ? "AR" : "EN"}
+            {t("home")}
+            <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-primaryHover transition-all duration-navbar group-hover:w-full"></span>
+          </Link>
+          <Link
+            to="/about"
+            className="text-base font-medium hover:text-primaryHover transition-colors duration-navbar relative group"
+          >
+            {t("about")}
+            <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-primaryHover transition-all duration-navbar group-hover:w-full"></span>
+          </Link>
+          <Link
+            to="/contact"
+            className="text-base font-medium hover:text-primaryHover transition-colors duration-navbar relative group"
+          >
+            {t("contact")}
+            <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-primaryHover transition-all duration-navbar group-hover:w-full"></span>
+          </Link>
+          <button
+            onClick={() => {
+              toggleLanguage();
+              setIsOpen(false);
+            }}
+            className="bg-accentColor text-white px-5 py-2.5 rounded-full hover:bg-accentColorHover transition-all duration-navbar backdrop-blur-xs text-sm font-medium shadow-glass hover:shadow-md"
+          >
+            {i18n.language === "en" ? "العربية" : "English"}
+          </button>
+
+          {/* Theme toggle icon */}
+          <button
+            onClick={toggleTheme}
+            className="bg-transparent text-primary dark:text-yellow-300 border-none p-3 rounded-full hover:bg-white/10 dark:hover:bg-gray-900/20 transition-all duration-navbar backdrop-blur-xs focus:outline-none"
+            aria-label="Toggle Theme"
+          >
+            {theme === "light" ? (
+              <Moon className="w-6 h-6" />
+            ) : (
+              <Sun className="w-6 h-6" />
+            )}
           </button>
         </nav>
 
         {/* Mobile Toggle Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-gray-700"
+          className="md:hidden text-lightText dark:text-darkText focus:outline-none bg-transparent p-3 rounded-full hover:bg-white/10 dark:hover:bg-gray-900/20 transition-all duration-navbar"
         >
-          <Menu size={24} />
+          <Menu size={30} />
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-gray-50 border-t">
-          <nav className="flex flex-col p-4 space-y-2">
+        <div className="md:hidden bg-lightBg dark:bg-darkBg border-t border-gray-200/50 dark:border-gray-700/50 transition-all duration-navbar backdrop-blur-sm">
+          <nav className="flex flex-col p-6 space-y-5">
             <button
               onClick={toggleTheme}
-              className="px-4 py-2 bg-blue-500 text-white rounded"
+              className="bg-transparent text-primary dark:text-yellow-300 p-3 rounded-full hover:bg-white/10 dark:hover:bg-gray-900/20 transition-all duration-navbar focus:outline-none self-end"
+              aria-label="Toggle Theme"
             >
-              Toggle Theme
+              {theme === "light" ? (
+                <Moon className="w-6 h-6" />
+              ) : (
+                <Sun className="w-6 h-6" />
+              )}
             </button>
             <Link
               to="/"
-              className="text-gray-700 hover:text-blue-600"
+              className="text-base font-medium hover:text-primaryHover transition-colors duration-navbar"
               onClick={() => setIsOpen(false)}
             >
               {t("home")}
             </Link>
             <Link
               to="/about"
-              className="text-gray-700 hover:text-blue-600"
+              className="text-base font-medium hover:text-primaryHover transition-colors duration-navbar"
               onClick={() => setIsOpen(false)}
             >
               {t("about")}
             </Link>
             <Link
               to="/contact"
-              className="text-gray-700 hover:text-blue-600"
+              className="text-base font-medium hover:text-primaryHover transition-colors duration-navbar"
               onClick={() => setIsOpen(false)}
             >
               {t("contact")}
             </Link>
-
-            {/* Button Toggle Between Languages */}
             <button
               onClick={() => {
                 toggleLanguage();
                 setIsOpen(false);
               }}
-              className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition"
+              className="bg-accentColor text-white px-5 py-2.5 rounded-full hover:bg-accentColorHover transition-all duration-navbar backdrop-blur-xs text-sm font-medium shadow-glass hover:shadow-md self-start"
             >
-              {i18n.language === "en" ? "AR" : "EN"}
+              {i18n.language === "en" ? "العربية" : "English"}
             </button>
           </nav>
         </div>

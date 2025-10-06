@@ -5,12 +5,25 @@ export default {
   theme: {
     extend: {
       colors: {
-        lightBg: "#ffffff",
-        lightText: "#213547",
-        darkBg: "#1f2937",
-        darkText: "#f9fafb",
+        lightBg: "#f8fafc",
+        lightText: "#1e293b",
+        darkBg: "#111827",
+        darkText: "#e5e7eb",
         primary: "#3b82f6",
-        primaryHover: "#2563eb",
+        primaryHover: "#1d4ed8",
+        accentColor: "#10b981",
+        accentColorHover: "#059669",
+      },
+      boxShadow: {
+        navbar: "0 2px 4px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1)",
+        navbarDark:
+          "0 2px 4px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.4)",
+      },
+      transitionProperty: {
+        "navbar-opacity": "opacity, transform",
+      },
+      transitionDuration: {
+        navbar: "300ms",
       },
     },
   },

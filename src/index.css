@@ -28,14 +28,14 @@ a:hover {
 }
 
 body {
-  @apply bg-white text-gray-900;
+  @apply bg-lightBg text-lightText transition-colors duration-navbar;
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
 }
 
 .dark body {
-  @apply bg-gray-900 text-gray-100;
+  @apply bg-darkBg text-darkText;
 }
 
 
